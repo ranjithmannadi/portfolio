@@ -9,32 +9,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
-  <div id="addnew">
-    <input type="text" id="id">
-    <input type="text" id="content">
-    <input type="button" value="Add" id="submit">
-</div>
-
-<div id="check">
-    <input type="text" id="input">
-    <input type="button" value="Search" id="search">
-</div>
-
-<script>
-  function writeToFile(d1, d2){
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var fh = fso.OpenTextFile("data.txt", 8, false, 0);
-    fh.WriteLine(d1 + ',' + d2);
-    fh.Close();
-}
-var submit = document.getElementById("submit");
-submit.onclick = function () {
-    var id      = document.getElementById("id").value;
-    var content = document.getElementById("content").value;
-    writeToFile(id, content);
-}
+ 
+    
+    <script>
+// Requiring fs module in which
+// writeFile function is defined.
+const fs = require('fs')
+  
+// Data which will write in a file.
+let data = "Learning how to write in a file."
+  
+// Write data in 'Output.txt' .
+fs.writeFile('Output.txt', data, (err) => {
+      
+    // In case of a error throw err.
+    if (err) throw err;
+})
 </script>
-
     
     
     
