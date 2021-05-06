@@ -272,5 +272,18 @@
     <footer class="copyright">
         <p>&copy; 2021, ranjithm, Allrights reserved</p>
     </footer>
+    <script>
+        $.ajax({
+        async:false,
+        url: '/file.txt',
+        dataType: 'text',
+        success: function(data) 
+        {
+        $('element').append(data);
+            }
+        });
+        
+    </script>
+        
 </body>
 </html>
