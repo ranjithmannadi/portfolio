@@ -1,46 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive PortFolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="ext.js" language="javascript"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
-<body>
- 
-    <form onSubmit="WriteToFile(this)"> 
-<label>Type your first name:</label> 
-<input type="text" name="FirstName" id="firstName" size="20"> 
- 
-<label>Type your last name: </abel> 
-<input type="text" name="LastName" id="lastName" size="20"> 
- 
-<input type="submit" value="submit"> 
-</form> 
-    
-    
-    <script>
-function WriteToFile(passForm) { 
- 
-    set fso = CreateObject("Scripting.FileSystemObject");  
-    set s   = fso.CreateTextFile("data.txt", True); 
- 
-    var firstName = document.getElementById('FirstName'); 
-    var lastName  = document.getElementById('lastName'); 
- 
-    s.writeline("First Name :" + firstName); 
-    s.writeline("Last Name :" + lastName); 
- 
-    s.writeline("-----------------------------"); 
-    s.Close(); 
- } 
-</script>
-    
-    
-    
-        
-</body>
-</html>
+#Simple Mood Diary Script As An Example#
 
+print('My Mood Diary')
+mood = input('How are you feeling today? ')
+#Saves the input as the variable 'mood'#
+text_file = open("data.txt", "w")
+#Opens or creates the .txt file, sharing the directory of the script#
+text_file.write(mood)
+#Writes the variable into the .txt file#
+text_file.close()
+#Closes the .txt file#
