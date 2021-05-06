@@ -1,33 +1,30 @@
-<html>
-  <head></head>
-  <body>
-
-    <form onSubmit="WriteToFile(this)"> 
-<label>Type your first name:</label> 
-<input type="text" name="FirstName" id="firstName" size="20"> 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
  
-<label>Type your last name: </abel> 
-<input type="text" name="LastName" id="lastName" size="20"> 
+        <title>Tuts+ Chat Application</title>
+        <meta name="description" content="Tuts+ Chat Application" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="menu">
+                <p class="welcome">Welcome, <b></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            </div>
  
-<input type="submit" value="submittt"> 
-</form> 
-    
-       <script>
-            function WriteToFile(passForm) { 
+            <div id="chatbox"></div>
  
-    set fso = CreateObject("Scripting.FileSystemObject");  
-    set s   = fso.CreateTextFile("data.txt", True); 
- 
-    var firstName = document.getElementById('FirstName'); 
-    var lastName  = document.getElementById('lastName'); 
- 
-    s.writeline("First Name :" + FirstName); 
-    s.writeline("Last Name :" + lastName); 
- 
-    s.writeline("-----------------------------"); 
-    s.Close(); 
- } 
-       </script>
-       
-  </body>
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {});
+        </script>
+    </body>
 </html>
